@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-->
+ ! Journals - Default localization
+ !
+ ! @package Coordinator\Modules\Journals
+ ! @author  Manuel Zavatta <manuel.zavatta@gmail.com>
+ ! @link    http://www.coordinator.it
+<!-->
+<locale>
+
+ <!-- module -->
+ <text key="journals">Journals</text>
+ <text key="journals-description">Coordinator journals</text>
+
+ <!-- authorizations -->
+ <text key="journals-manage">Gestione</text>
+ <text key="journals-manage-description">Gestione modulo diario</text>
+
+</locale>
