@@ -16,7 +16,7 @@
  if(explode("_",SCRIPT)[0]=="tags"){
   $nav->addItem(api_text("nav-tags-list"),api_url(["scr"=>"tags_list"]));
   // operations
-  if($tag_obj->id && in_array(SCRIPT,array("tags_view","tags_edit"))){
+  if($tag_obj->id && in_array(SCRIPT,["tags_view","tags_edit"])){
    $nav->addItem(api_text("nav-operations"),null,null,"active");
    $nav->addSubItem(api_text("nav-tags-operations-edit"),api_url(["scr"=>"tags_edit","idTag"=>$tag_obj->id]),(api_checkAuthorization("journals-manage")));
   }else{

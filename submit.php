@@ -19,7 +19,7 @@
 
   // default
   default:
-   api_alerts_add(api_text("alert_submitFunctionNotFound",array(MODULE,SCRIPT,ACTION)),"danger");
+   api_alerts_add(api_text("alert_submitFunctionNotFound",[MODULE,SCRIPT,ACTION]),"danger");
    api_redirect("?mod=".MODULE);
  }
 
@@ -59,7 +59,7 @@
      throw new Exception("Tag action \"".$action."\" was not defined..");
    }
    // redirect
-   api_redirect(api_return_url(array("scr"=>"tags_list","idTag"=>$tag_obj->id)));
+   api_redirect(api_return_url(["scr"=>"tags_list","idTag"=>$tag_obj->id]));
   }catch(Exception $e){
    // dump, alert and redirect
    api_redirect_exception($e,api_url(["scr"=>"tags_list","idTag"=>$tag_obj->id]),"cJournalsTag-alert-error");
