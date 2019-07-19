@@ -1,2 +1,2 @@
-# Tasks
-modules/tasks
+# Journals
+modules/journals
