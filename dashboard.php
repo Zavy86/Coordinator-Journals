@@ -10,12 +10,10 @@
  require_once(MODULE_PATH."template.inc.php");
  // set application title
  $app->setTitle(api_text(MODULE));
-
  // include tasks
  require_once(MODULE_PATH."dashboard-tasks.inc.php");
  // include notebook
  require_once(MODULE_PATH."dashboard-notebook.inc.php");
-
  // build grid object
  $grid=new strGrid();
  $grid->addRow();
