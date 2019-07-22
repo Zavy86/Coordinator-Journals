@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-->
+ ! Journals - Default localization
+ !
+ ! @package Coordinator\Modules\Journals
+ ! @author  Manuel Zavatta <manuel.zavatta@gmail.com>
+ ! @link    http://www.coordinator.it
+<!-->
+<locale>
+
+ <!-- module -->
+ <text key="journals">Diario</text>
+ <text key="journals-description">Diario personale</text>
+
+ <!-- authorizations -->
+ <text key="journals-manage">Gestione</text>
+ <text key="journals-manage-description">Gestione modulo diario</text>
+ <text key="journals-usage">Abilitazione</text>
+ <text key="journals-usage-description">Utilizzo del modulo diario</text>
+
+ <!-- cJournalsTag -->
+ <text key="cJournalsTag">Etichetta</text>
+ <text key="cJournalsTag-event-created">Etichetta creata</text>
+ <text key="cJournalsTag-event-updated">Etichetta aggiornata</text>
+ <text key="cJournalsTag-event-deleted">Etichetta eliminata</text>
+ <text key="cJournalsTag-event-undeleted">Etichetta ripristinata</text>
+ <text key="cJournalsTag-event-removed">Etichetta rimossa</text>
+ <text key="cJournalsTag-alert-error">Si è verificato un errore durante il salvataggio dell'etichetta</text>
+ <text key="cJournalsTag-alert-exists">L'etichetta non è stata trovata</text>
+ <text key="cJournalsTag-alert-stored">L'etichetta è stata salvata</text>
+ <text key="cJournalsTag-alert-deleted">L'etichetta è stata eliminata</text>
+ <text key="cJournalsTag-alert-undeleted">L'etichetta è stata ripristinata</text>
+ <text key="cJournalsTag-alert-removed">L'etichetta è stata rimossa</text>
+ <text key="cJournalsTag-alert-unauthorized">Non sei autorizzato ad operare su questa etichetta</text>
+ <text key="cJournalsTag-ff-fkUser">Utente</text>
+ <text key="cJournalsTag-ff-fkUser-select">Seleziona un utente</text>
+ <text key="cJournalsTag-ff-name">Etichetta</text>
+ <text key="cJournalsTag-ff-name-placeholder">Nome dell'eticetta</text>
+ <text key="cJournalsTag-ff-description">Descrizione</text>
+ <text key="cJournalsTag-ff-description-placeholder">Eventuale descrizione dell'etichetta</text>
+ <text key="cJournalsTag-ff-color">Colore</text>
+
+ <!-- cJournalsTask -->
+ <text key="cJournalsTask">Compito</text>
+ <text key="cJournalsTask-event-created">Compito creato</text>
+ <text key="cJournalsTask-event-updated">Compito aggiornato</text>
+ <text key="cJournalsTask-event-deleted">Compito eliminato</text>
+ <text key="cJournalsTask-event-undeleted">Compito ripristinato</text>
+ <text key="cJournalsTask-event-removed">Compito rimosso</text>
+ <text key="cJournalsTask-alert-error">Si è verificato un errore durante il salvataggio del compito</text>
+ <text key="cJournalsTask-alert-exists">Il compito non è stato trovato</text>
+ <text key="cJournalsTask-alert-stored">Il compito è stato salvato</text>
+ <text key="cJournalsTask-alert-deleted">Il compito è stato eliminato</text>
+ <text key="cJournalsTask-alert-undeleted">Il compito è stato ripristinato</text>
+ <text key="cJournalsTask-alert-completed">Il compito è stato completato</text>
+ <text key="cJournalsTask-alert-uncompleted">Il compito è stato ripristinato</text>
+ <text key="cJournalsTask-alert-removed">Il compito è stato rimosso</text>
+ <text key="cJournalsTask-alert-unauthorized">Non sei autorizzato ad operare su questo compito</text>
+ <text key="cJournalsTask-completed-true">Completato</text>
+ <text key="cJournalsTask-completed-false">Inserito</text>
+ <text key="cJournalsTask-ff-fkUser">Utente</text>
+ <text key="cJournalsTask-ff-fkUser-select">Seleziona un utente</text>
+ <text key="cJournalsTask-ff-title">Compito</text>
+ <text key="cJournalsTask-ff-title-placeholder">Titolo del compito</text>
+ <text key="cJournalsTask-ff-content">Dettagli</text>
+ <text key="cJournalsTask-ff-content-placeholder">Eventuali dettagli del compito</text>
+ <text key="cJournalsTask-ff-tags">Etichette</text>
+
+ <!-- cJournalsNotebook -->
+ <text key="cJournalsNotebook">Taccuino</text>
+ <text key="cJournalsNotebook-event-created">Taccuino creato</text>
+ <text key="cJournalsNotebook-event-updated">Taccuino aggiornato</text>
+ <text key="cJournalsNotebook-event-deleted">Taccuino eliminato</text>
+ <text key="cJournalsNotebook-event-undeleted">Taccuino ripristinato</text>
+ <text key="cJournalsNotebook-event-removed">Taccuino rimosso</text>
+ <text key="cJournalsNotebook-alert-error">Si è verificato un errore durante il salvataggio del taccuino</text>
+ <text key="cJournalsNotebook-alert-exists">Il taccuino non è stato trovato</text>
+ <text key="cJournalsNotebook-alert-stored">Il taccuino è stato salvato</text>
+ <text key="cJournalsNotebook-alert-deleted">Il taccuino è stato eliminato</text>
+ <text key="cJournalsNotebook-alert-undeleted">Il taccuino è stato ripristinato</text>
+ <text key="cJournalsNotebook-alert-removed">Il taccuino è stato rimosso</text>
+ <text key="cJournalsNotebook-alert-unauthorized">Non sei autorizzato a operare su questo taccuino</text>
+ <text key="cJournalsNotebook-ff-fkUser">Utente</text>
+ <text key="cJournalsNotebook-ff-fkUser-select">Seleziona un utente</text>
+ <text key="cJournalsNotebook-ff-content">Contenuto</text>
+ <text key="cJournalsNotebook-ff-content-placeholder">Contenuto del taccuino..</text>
+
+ <!-- navigation -->
+ <text key="nav-settings-tags">Gestione etichette</text>
+
+ <!-- dashboard -->
+ <text key="dashboard-tasks-tr-unvalued">Non sono presenti compiti da mostrare..</text>
+ <text key="dashboard-tasks-td-remove-confirm">Confermi di voler rimuovere irrecuperabilmente questo compito dal database?</text>
+ <text key="dashboard-tasks-td-complete-confirm">Confermi di voler archiviare questo compito?</text>
+ <text key="dashboard-tasks-td-uncomplete-confirm">Confermi di voler ripristinare questo compito?</text>
+ <text key="dashboard-tasks-btn-add">Aggiungi</text>
+ <text key="dashboard-tasks-btn-all">Tutti</text>
+ <text key="dashboard-tasks-modal-title-add">Aggiungi compito</text>
+ <text key="dashboard-tasks-modal-title-edit">Modifica compito</text>
+ <text key="dashboard-tasks-modal-btn-complete">Archivia</text>
+ <text key="dashboard-tasks-modal-btn-uncomplete">Ripristina</text>
+ <text key="dashboard-tasks-modal-btn-remove-confirm">Confermi di voler rimuovere irrecuperabilmente questo compito dal database?</text>
+ <text key="dashboard-notebook-btn-save">Salva</text>
+
+ <!-- tags_list -->
+ <text key="tags_list">Etichette</text>
+ <text key="tags_list-tr-unvalued">Non sono presenti etichette da mostrare..</text>
+ <text key="tags_list-th-name">Etichetta</text>
+ <text key="tags_list-th-description">Descrizione</text>
+ <text key="tags_list-td-delete-confirm">Confermi di voler eliminare questa etichetta?</text>
+ <text key="tags_list-td-undelete-confirm">Confermi di voler ripristinare questa etichetta?</text>
+ <text key="tags_list-modal-title-edit">Modifica etichetta: <![CDATA[{0}]]></text>
+ <text key="tags_list-modal-title-add">Aggiungi etichetta</text>
+ <text key="tags_list-modal-fc-delete-confirm">Confermi di voler eliminare questa etichetta?</text>
+ <text key="tags_list-modal-fc-remove-confirm">Confermi di voler rimuovere irrecuperabilmente questa etichetta dal database?</text>
+
+</locale>
