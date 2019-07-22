@@ -39,8 +39,7 @@
   if($task_fobj->content){$task_td.=" ".api_tag("span",$task_fobj->content,null,"color:#AAAAAA");}
   // make task row
   $table->addRow(implode(" ",$tr_class_array));
-  if(!$task_fobj->completed){$table->addRowField(api_icon("fa-square-o",api_text("dashboard-tasks-td-uncompleted")));}
-  else{$table->addRowField(api_icon("fa-check-square-o",api_text("dashboard-tasks-td-completed")));}
+  $table->addRowField($task_fobj->getCompleted(true,false));
   $table->addRowField($task_td,"truncate-ellipsis");
   $table->addRowField($ob->render(),"text-right");
  }
@@ -85,7 +84,7 @@
   }else{$task_footer.=api_link(api_url(["scr"=>"submit","act"=>"task_uncomplete","idTask"=>$selected_task_obj->id,"return"=>["scr"=>"dashboard","idTag"=>$tag_obj->id]]),api_text("dashboard-tasks-modal-btn-uncomplete"),null,"btn btn-default");}
   $task_footer.=api_link(api_url(["scr"=>"submit","act"=>"task_remove","idTask"=>$selected_task_obj->id,"return"=>["scr"=>"dashboard","idTag"=>$tag_obj->id]]),api_text("form-fc-remove"),null,"btn btn-danger",false,api_text("dashboard-tasks-modal-btn-remove-confirm"));
   // build task view modal window
-  $task_modal=new strModal(($selected_task_obj->completed?api_icon("fa-check-square-o"):api_icon("fa-square-o"))." ".$selected_task_obj->title,null,"dashboard-tasks");
+  $task_modal=new strModal($task_fobj->getCompleted(true,false)." ".$selected_task_obj->title,null,"dashboard-tasks");
   $task_modal->setBody($task_body);
   $task_modal->setFooter($task_footer);
   // add modal to application

@@ -50,6 +50,8 @@
  <text key="cJournalsTask-alert-deleted">Il compito è stato completato</text>
  <text key="cJournalsTask-alert-undeleted">Il compito è stato ripristinato</text>
  <text key="cJournalsTask-alert-removed">Il compito è stato rimosso</text>
+ <text key="cJournalsTask-completed-true">Completato</text>
+ <text key="cJournalsTask-completed-false">Inserito</text>
  <text key="cJournalsTask-ff-fkUser">Utente</text>
  <text key="cJournalsTask-ff-fkUser-select">Seleziona un utente</text>
  <text key="cJournalsTask-ff-title">Compito</text>

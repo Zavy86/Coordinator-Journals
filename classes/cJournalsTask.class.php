@@ -25,6 +25,30 @@
   protected $content;
 
   /**
+   * Availables Completed
+   *
+   * @return object[] Array of available completed
+   */
+  public static function availablesCompleted(){
+   return array(
+    "0"=>(object)array("code"=>"0","text"=>api_text("cJournalsTask-completed-false"),"icon"=>api_icon("fa-square-o",api_text("cJournalsTask-completed-false"))),
+    "1"=>(object)array("code"=>"1","text"=>api_text("cJournalsTask-completed-true"),"icon"=>api_icon("fa-check-square-o",api_text("cJournalsTask-completed-true")))
+   );
+  }
+
+  /**
+   * Get Completed
+   *
+   * @param boolean $icon Return icon
+   * @param boolean $text Return text
+   * @param string $align Icon alignment [left|right]
+   * @return string
+   */
+  public function getCompleted($icon=true,$text=true,$align="left"){
+   return parent::decode($this->completed,static::availablesCompleted(),$icon,$text,$align);
+  }
+
+  /**
    * Get Tags
    *
    * @return objects[] Tags array sorted by name
@@ -38,6 +62,54 @@
    // check properties
    if(!strlen(trim($this->fkUser))){throw new Exception("User key is mandatory..");}
    if(!strlen(trim($this->title))){throw new Exception("Task title is mandatory..");}
+   // return
+   return true;
+  }
+
+  /**
+   * Complete
+   *
+   * @param boolean $log Log event
+   * @return boolean
+   */
+  public function complete($log=true){
+   // check existence
+   if(!$this->exists()){return false;}
+   // build query object
+   $query_obj=new stdClass();
+   $query_obj->id=$this->id;
+   $query_obj->completed=1;
+   // debug
+   api_dump($query_obj,static::class."->complete query object");
+   // execute query
+   $GLOBALS['database']->queryUpdate(static::$table,$query_obj);
+   /* @todo check? */
+   // throw event
+   $this->event("information","completed",null,$log);
+   // return
+   return true;
+  }
+
+  /**
+   * Uncomplete
+   *
+   * @param boolean $log Log event
+   * @return boolean
+   */
+  public function uncomplete($log=true){
+   // check existence
+   if(!$this->exists()){return false;}
+   // build query object
+   $query_obj=new stdClass();
+   $query_obj->id=$this->id;
+   $query_obj->completed=0;
+   // debug
+   api_dump($query_obj,static::class."->uncomplete query object");
+   // execute query
+   $GLOBALS['database']->queryUpdate(static::$table,$query_obj);
+   /* @todo check? */
+   // throw event
+   $this->event("information","uncompleted",null,$log);
    // return
    return true;
   }
