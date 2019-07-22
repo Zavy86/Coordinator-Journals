@@ -13,6 +13,8 @@
  <text key="journals-description">Diario personale</text>
 
  <!-- authorizations -->
+ <text key="journals-manage">Gestione</text>
+ <text key="journals-manage-description">Gestione modulo diario</text>
  <text key="journals-usage">Abilitazione</text>
  <text key="journals-usage-description">Utilizzo del modulo diario</text>
 
