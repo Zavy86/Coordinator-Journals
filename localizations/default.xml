@@ -29,6 +29,7 @@
  <text key="cJournalsTag-alert-deleted">L'etichetta è stata eliminata</text>
  <text key="cJournalsTag-alert-undeleted">L'etichetta è stata ripristinata</text>
  <text key="cJournalsTag-alert-removed">L'etichetta è stata rimossa</text>
+ <text key="cJournalsTag-alert-unauthorized">Non sei autorizzato ad operare su questa etichetta</text>
  <text key="cJournalsTag-ff-fkUser">Utente</text>
  <text key="cJournalsTag-ff-fkUser-select">Seleziona un utente</text>
  <text key="cJournalsTag-ff-name">Etichetta</text>
@@ -47,9 +48,12 @@
  <text key="cJournalsTask-alert-error">Si è verificato un errore durante il salvataggio del compito</text>
  <text key="cJournalsTask-alert-exists">Il compito non è stato trovato</text>
  <text key="cJournalsTask-alert-stored">Il compito è stato salvato</text>
- <text key="cJournalsTask-alert-deleted">Il compito è stato completato</text>
+ <text key="cJournalsTask-alert-deleted">Il compito è stato eliminato</text>
  <text key="cJournalsTask-alert-undeleted">Il compito è stato ripristinato</text>
+ <text key="cJournalsTask-alert-completed">Il compito è stato completato</text>
+ <text key="cJournalsTask-alert-uncompleted">Il compito è stato ripristinato</text>
  <text key="cJournalsTask-alert-removed">Il compito è stato rimosso</text>
+ <text key="cJournalsTask-alert-unauthorized">Non sei autorizzato ad operare su questo compito</text>
  <text key="cJournalsTask-completed-true">Completato</text>
  <text key="cJournalsTask-completed-false">Inserito</text>
  <text key="cJournalsTask-ff-fkUser">Utente</text>
@@ -61,22 +65,23 @@
  <text key="cJournalsTask-ff-tags">Etichette</text>
 
  <!-- cJournalsNotebook -->
- <text key="cJournalsNotebook">Appunti</text>
- <text key="cJournalsNotebook-event-created">Appunto creato</text>
- <text key="cJournalsNotebook-event-updated">Appunto aggiornato</text>
- <text key="cJournalsNotebook-event-deleted">Appunto eliminato</text>
- <text key="cJournalsNotebook-event-undeleted">Appunto ripristinato</text>
- <text key="cJournalsNotebook-event-removed">Appunto rimosso</text>
- <text key="cJournalsNotebook-alert-error">Si è verificato un errore durante il salvataggio del appunto</text>
- <text key="cJournalsNotebook-alert-exists">L'appunto non è stato trovato</text>
- <text key="cJournalsNotebook-alert-stored">L'appunto è stato salvato</text>
- <text key="cJournalsNotebook-alert-deleted">L'appunto è stato completato</text>
- <text key="cJournalsNotebook-alert-undeleted">L'appunto è stato ripristinato</text>
- <text key="cJournalsNotebook-alert-removed">L'appunto è stato rimosso</text>
+ <text key="cJournalsNotebook">Taccuino</text>
+ <text key="cJournalsNotebook-event-created">Taccuino creato</text>
+ <text key="cJournalsNotebook-event-updated">Taccuino aggiornato</text>
+ <text key="cJournalsNotebook-event-deleted">Taccuino eliminato</text>
+ <text key="cJournalsNotebook-event-undeleted">Taccuino ripristinato</text>
+ <text key="cJournalsNotebook-event-removed">Taccuino rimosso</text>
+ <text key="cJournalsNotebook-alert-error">Si è verificato un errore durante il salvataggio del taccuino</text>
+ <text key="cJournalsNotebook-alert-exists">Il taccuino non è stato trovato</text>
+ <text key="cJournalsNotebook-alert-stored">Il taccuino è stato salvato</text>
+ <text key="cJournalsNotebook-alert-deleted">Il taccuino è stato eliminato</text>
+ <text key="cJournalsNotebook-alert-undeleted">Il taccuino è stato ripristinato</text>
+ <text key="cJournalsNotebook-alert-removed">Il taccuino è stato rimosso</text>
+ <text key="cJournalsNotebook-alert-unauthorized">Non sei autorizzato a operare su questo taccuino</text>
  <text key="cJournalsNotebook-ff-fkUser">Utente</text>
  <text key="cJournalsNotebook-ff-fkUser-select">Seleziona un utente</text>
  <text key="cJournalsNotebook-ff-content">Contenuto</text>
- <text key="cJournalsNotebook-ff-content-placeholder">Inserisci qui i tuoi appunti..</text>
+ <text key="cJournalsNotebook-ff-content-placeholder">Contenuto del taccuino..</text>
 
  <!-- navigation -->
  <text key="nav-settings-tags">Gestione etichette</text>
