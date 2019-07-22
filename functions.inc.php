@@ -9,5 +9,7 @@
 
  // include classes
  require_once(DIR."modules/journals/classes/cJournalsTag.class.php");
+ require_once(DIR."modules/journals/classes/cJournalsTask.class.php");
+ require_once(DIR."modules/journals/classes/cJournalsNotebook.class.php");
 
 ?>

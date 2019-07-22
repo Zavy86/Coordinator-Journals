@@ -14,7 +14,7 @@ class cJournalsTag extends cObject{
 
   /** Parameters */
   static protected $table="journals__tags";
-  static protected $logs=true;
+  static protected $logs=false;
 
   /** Properties */
   protected $id;
@@ -25,16 +25,39 @@ class cJournalsTag extends cObject{
   protected $color;
 
   /*
+   * Get Label
+   */
+  public function getLabel(){
+   // make label
+   $label=$this->name;
+   if($this->description){$label.=" (".$this->description.")";}
+   // return
+   return $label;
+  }
+
+  /*
    * Get Tag
    */
   public function getTag(){
-   return api_tag("span",$this->name,"label","background-color:".$this->color);
+   return api_label($this->name,null,"background-color:".$this->color);
   }
 
   /**
-   * Get Journals
+   * Get Tasks
+   *
+   * @return objects[] Tasks array
    */
-  public function getJournals(){/** @todo get joined */}
+  public function getTasks(){return $this->joined_select("journals__tasks__join__tags","fkTag","cJournalsTask","fkTask");}
+
+
+  /**
+   * Count Tasks
+   *
+   * @return integer
+   */
+  public function tasks_count(){
+   return $this->joined_count("journals__tasks__join__tags","fkTag");
+  }
 
   /**
    * Check
@@ -60,10 +83,11 @@ class cJournalsTag extends cObject{
    // build form
    $form=new strForm(api_url(array_merge(["mod"=>"journals","scr"=>"submit","act"=>"tag_store","idTag"=>$this->id],$additional_parameters)),"POST",null,null,"journals_tags_form");
    // fields
-   $form->addField("hidden","fkUser",null,$GLOBALS['session']->user->id);
+   $form->addField("select","fkUser",api_text("cJournalsTag-ff-fkUser"),$this->fkUser,api_text("cJournalsTag-ff-fkUser-select"),null,null,null,"required");
+   foreach(cUser::availables() as $user_fobj){$form->addFieldOption($user_fobj->id,$user_fobj->fullname);}
    $form->addField("text","name",api_text("cJournalsTag-ff-name"),$this->name,api_text("cJournalsTag-ff-name-placeholder"),null,null,null,"required");
    $form->addField("textarea","description",api_text("cJournalsTag-ff-description"),$this->description,api_text("cJournalsTag-ff-description-placeholder"),null,null,null,"rows='2'");
-   $form->addField("color","color",api_text("cJournalsTag-ff-color"),($this->color?$this->color:"#".substr(md5(rand()),0,6)),null,1,null,null,"required");
+   $form->addField("color","color",api_text("cJournalsTag-ff-color"),($this->color?$this->color:api_random_color()),null,2,null,null,"required");
    // controls
    $form->addControl("submit",api_text("form-fc-submit"));
    // return
@@ -73,8 +97,12 @@ class cJournalsTag extends cObject{
   /**
    * Disable remove function
    */
-  public function remove(){throw new Exception("Remove function disabled by developer..");}
-  /** @todo check per vedere se è vuoto e permetterne l'eliminazione */
+  public function remove(){
+   // check for tasks
+   if($this->tasks_count()){throw new Exception("Remove disabled until there are assigned tasks..");}
+   // call parent
+   return parent::remove();
+  }
 
   // debug
   //protected function event_triggered($event){api_dump($event,static::class." event triggered");}
