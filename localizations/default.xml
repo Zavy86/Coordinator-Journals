@@ -41,29 +41,29 @@
  <text key="cJournalsTag-ff-color">Colore</text>
 
  <!-- cJournalsTask -->
- <text key="cJournalsTask">Compito</text>
- <text key="cJournalsTask-event-created">Compito creato</text>
- <text key="cJournalsTask-event-updated">Compito aggiornato</text>
- <text key="cJournalsTask-event-deleted">Compito eliminato</text>
- <text key="cJournalsTask-event-undeleted">Compito ripristinato</text>
- <text key="cJournalsTask-event-removed">Compito rimosso</text>
- <text key="cJournalsTask-alert-error">Si è verificato un errore durante il salvataggio del compito</text>
- <text key="cJournalsTask-alert-exists">Il compito non è stato trovato</text>
- <text key="cJournalsTask-alert-stored">Il compito è stato salvato</text>
- <text key="cJournalsTask-alert-deleted">Il compito è stato eliminato</text>
- <text key="cJournalsTask-alert-undeleted">Il compito è stato ripristinato</text>
- <text key="cJournalsTask-alert-completed">Il compito è stato completato</text>
- <text key="cJournalsTask-alert-uncompleted">Il compito è stato ripristinato</text>
- <text key="cJournalsTask-alert-removed">Il compito è stato rimosso</text>
- <text key="cJournalsTask-alert-unauthorized">Non sei autorizzato ad operare su questo compito</text>
+ <text key="cJournalsTask">Promemoria</text>
+ <text key="cJournalsTask-event-created">Promemoria creato</text>
+ <text key="cJournalsTask-event-updated">Promemoria aggiornato</text>
+ <text key="cJournalsTask-event-deleted">Promemoria eliminato</text>
+ <text key="cJournalsTask-event-undeleted">Promemoria ripristinato</text>
+ <text key="cJournalsTask-event-removed">Promemoria rimosso</text>
+ <text key="cJournalsTask-alert-error">Si è verificato un errore durante il salvataggio del promemoria</text>
+ <text key="cJournalsTask-alert-exists">Il promemoria non è stato trovato</text>
+ <text key="cJournalsTask-alert-stored">Il promemoria è stato salvato</text>
+ <text key="cJournalsTask-alert-deleted">Il promemoria è stato eliminato</text>
+ <text key="cJournalsTask-alert-undeleted">Il promemoria è stato ripristinato</text>
+ <text key="cJournalsTask-alert-completed">Il promemoria è stato completato</text>
+ <text key="cJournalsTask-alert-uncompleted">Il promemoria è stato ripristinato</text>
+ <text key="cJournalsTask-alert-removed">Il promemoria è stato rimosso</text>
+ <text key="cJournalsTask-alert-unauthorized">Non sei autorizzato ad operare su questo promemoria</text>
  <text key="cJournalsTask-completed-true">Completato</text>
  <text key="cJournalsTask-completed-false">Inserito</text>
  <text key="cJournalsTask-ff-fkUser">Utente</text>
  <text key="cJournalsTask-ff-fkUser-select">Seleziona un utente</text>
- <text key="cJournalsTask-ff-title">Compito</text>
- <text key="cJournalsTask-ff-title-placeholder">Titolo del compito</text>
+ <text key="cJournalsTask-ff-title">Promemoria</text>
+ <text key="cJournalsTask-ff-title-placeholder">Titolo del promemoria</text>
  <text key="cJournalsTask-ff-content">Dettagli</text>
- <text key="cJournalsTask-ff-content-placeholder">Eventuali dettagli del compito</text>
+ <text key="cJournalsTask-ff-content-placeholder">Eventuali dettagli del promemoria</text>
  <text key="cJournalsTask-ff-tags">Etichette</text>
 
  <!-- cJournalsNotebook -->
@@ -90,16 +90,16 @@
 
  <!-- dashboard -->
  <text key="dashboard-tasks-tr-unvalued">Non sono presenti compiti da mostrare..</text>
- <text key="dashboard-tasks-td-remove-confirm">Confermi di voler rimuovere irrecuperabilmente questo compito dal database?</text>
- <text key="dashboard-tasks-td-complete-confirm">Confermi di voler archiviare questo compito?</text>
- <text key="dashboard-tasks-td-uncomplete-confirm">Confermi di voler ripristinare questo compito?</text>
+ <text key="dashboard-tasks-td-remove-confirm">Confermi di voler rimuovere irrecuperabilmente questo promemoria dal database?</text>
+ <text key="dashboard-tasks-td-complete-confirm">Confermi di voler archiviare questo promemoria?</text>
+ <text key="dashboard-tasks-td-uncomplete-confirm">Confermi di voler ripristinare questo promemoria?</text>
  <text key="dashboard-tasks-btn-add">Aggiungi</text>
  <text key="dashboard-tasks-btn-all">Tutti</text>
- <text key="dashboard-tasks-modal-title-add">Aggiungi compito</text>
- <text key="dashboard-tasks-modal-title-edit">Modifica compito</text>
+ <text key="dashboard-tasks-modal-title-add">Aggiungi promemoria</text>
+ <text key="dashboard-tasks-modal-title-edit">Modifica promemoria</text>
  <text key="dashboard-tasks-modal-btn-complete">Archivia</text>
  <text key="dashboard-tasks-modal-btn-uncomplete">Ripristina</text>
- <text key="dashboard-tasks-modal-btn-remove-confirm">Confermi di voler rimuovere irrecuperabilmente questo compito dal database?</text>
+ <text key="dashboard-tasks-modal-btn-remove-confirm">Confermi di voler rimuovere irrecuperabilmente questo promemoria dal database?</text>
  <text key="dashboard-notebook-btn-save">Salva</text>
 
  <!-- tags_list -->
