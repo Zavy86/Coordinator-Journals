@@ -91,7 +91,9 @@
  <!-- dashboard -->
  <text key="dashboard-tasks-tr-unvalued">Non sono presenti compiti da mostrare..</text>
  <text key="dashboard-tasks-td-remove-confirm">Confermi di voler rimuovere irrecuperabilmente questo promemoria dal database?</text>
+ <text key="dashboard-tasks-td-complete">Archivia</text>
  <text key="dashboard-tasks-td-complete-confirm">Confermi di voler archiviare questo promemoria?</text>
+ <text key="dashboard-tasks-td-uncomplete">Ripristina</text>
  <text key="dashboard-tasks-td-uncomplete-confirm">Confermi di voler ripristinare questo promemoria?</text>
  <text key="dashboard-tasks-btn-add">Aggiungi</text>
  <text key="dashboard-tasks-btn-all">Tutti</text>
