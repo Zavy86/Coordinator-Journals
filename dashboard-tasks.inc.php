@@ -54,7 +54,7 @@
   $label=$tag_fobj->name;
   $title=$tag_fobj->description;
   $count=$tag_fobj->tasks_count(false,["fkUser"=>$session->user->id]);
-  $label=api_label($count,null,"background-color:".$tag_fobj->color)." ".$label;
+  $label=api_label($count,null,"background-color:".$tag_fobj->color)."&nbsp;&nbsp;".$label;
   // skip if no count
   if(!$count){continue;}
   // add tag link to array
@@ -79,7 +79,7 @@
   if(count($tags_array)){$task_body.=api_tag("p",implode(" ",$tags_array));}
   // make footer buttons
   if(!$selected_task_obj->completed){
-   $task_footer.=api_link(api_url(["scr"=>"submit","act"=>"task_complete","idTask"=>$selected_task_obj->id,"return"=>["scr"=>"dashboard","idTag"=>$tag_obj->id]]),api_text("dashboard-tasks-modal-btn-complete"),null,"btn btn-success");
+   $task_footer.=api_link(api_url(["scr"=>"submit","act"=>"task_complete","idTask"=>$selected_task_obj->id,"return"=>["scr"=>"dashboard","idTag"=>$tag_obj->id]]),api_text("dashboard-tasks-modal-btn-complete"),null,"btn btn-primary");
    $task_footer.=api_link(api_url(["scr"=>"dashboard","act"=>"task_edit","idTag"=>$tag_obj->id,"idTask"=>$selected_task_obj->id]),api_text("form-fc-edit"),null,"btn btn-default");
   }else{$task_footer.=api_link(api_url(["scr"=>"submit","act"=>"task_uncomplete","idTask"=>$selected_task_obj->id,"return"=>["scr"=>"dashboard","idTag"=>$tag_obj->id]]),api_text("dashboard-tasks-modal-btn-uncomplete"),null,"btn btn-default");}
   $task_footer.=api_link(api_url(["scr"=>"submit","act"=>"task_remove","idTask"=>$selected_task_obj->id,"return"=>["scr"=>"dashboard","idTag"=>$tag_obj->id]]),api_text("form-fc-remove"),null,"btn btn-danger",false,api_text("dashboard-tasks-modal-btn-remove-confirm"));
