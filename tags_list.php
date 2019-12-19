@@ -25,7 +25,7 @@
   else{$ob->addElement(api_url(["scr"=>"submit","act"=>"tag_delete","idTag"=>$tag_fobj->id,"return"=>["scr"=>"tags_list"]]),"fa-trash",api_text("table-td-delete"),true,api_text("tags_list-td-delete-confirm"));}
   // make table row class
   $tr_class_array=array();
-  if($tag_fobj->id==$_REQUEST['idTag']){$tr_class_array[]="info";}
+  if($tag_fobj->id==$_REQUEST['idTag']){$tr_class_array[]="currentrow";}
   if($tag_fobj->deleted){$tr_class_array[]="deleted";}
   // make tag row
   $table->addRow(implode(" ",$tr_class_array));
