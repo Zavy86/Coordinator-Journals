@@ -28,7 +28,7 @@
   $ob->addElement(api_url(["scr"=>"submit","act"=>"task_remove","idTask"=>$task_fobj->id,"return"=>["scr"=>"dashboard","idTag"=>$tag_obj->id]]),"fa-trash",api_text("table-td-remove"),true,api_text("dashboard-tasks-td-remove-confirm"));
   // make table row class
   $tr_class_array=array();
-  if($task_fobj->id==$_REQUEST['idTask']){$tr_class_array[]="info";}
+  if($task_fobj->id==$_REQUEST['idTask']){$tr_class_array[]="currentrow";}
   // make task
   $task_td=api_tag("span",$task_fobj->title,($task_fobj->completed?"text-deleted":null));
   // cycle all tags
