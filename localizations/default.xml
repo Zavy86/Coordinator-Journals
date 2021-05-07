@@ -20,11 +20,6 @@
 
  <!-- cJournalsTag -->
  <text key="cJournalsTag">Etichetta</text>
- <text key="cJournalsTag-event-created">Etichetta creata</text>
- <text key="cJournalsTag-event-updated">Etichetta aggiornata</text>
- <text key="cJournalsTag-event-deleted">Etichetta eliminata</text>
- <text key="cJournalsTag-event-undeleted">Etichetta ripristinata</text>
- <text key="cJournalsTag-event-removed">Etichetta rimossa</text>
  <text key="cJournalsTag-alert-error">Si è verificato un errore durante il salvataggio dell'etichetta</text>
  <text key="cJournalsTag-alert-exists">L'etichetta non è stata trovata</text>
  <text key="cJournalsTag-alert-stored">L'etichetta è stata salvata</text>
@@ -42,11 +37,6 @@
 
  <!-- cJournalsTask -->
  <text key="cJournalsTask">Promemoria</text>
- <text key="cJournalsTask-event-created">Promemoria creato</text>
- <text key="cJournalsTask-event-updated">Promemoria aggiornato</text>
- <text key="cJournalsTask-event-deleted">Promemoria eliminato</text>
- <text key="cJournalsTask-event-undeleted">Promemoria ripristinato</text>
- <text key="cJournalsTask-event-removed">Promemoria rimosso</text>
  <text key="cJournalsTask-alert-error">Si è verificato un errore durante il salvataggio del promemoria</text>
  <text key="cJournalsTask-alert-exists">Il promemoria non è stato trovato</text>
  <text key="cJournalsTask-alert-stored">Il promemoria è stato salvato</text>
@@ -56,6 +46,7 @@
  <text key="cJournalsTask-alert-uncompleted">Il promemoria è stato ripristinato</text>
  <text key="cJournalsTask-alert-removed">Il promemoria è stato rimosso</text>
  <text key="cJournalsTask-alert-unauthorized">Non sei autorizzato ad operare su questo promemoria</text>
+ <text key="cJournalsTask-today">Eseguire in giornata</text>
  <text key="cJournalsTask-completed-true">Completato</text>
  <text key="cJournalsTask-completed-false">Inserito</text>
  <text key="cJournalsTask-ff-fkUser">Utente</text>
@@ -68,11 +59,6 @@
 
  <!-- cJournalsNotebook -->
  <text key="cJournalsNotebook">Taccuino</text>
- <text key="cJournalsNotebook-event-created">Taccuino creato</text>
- <text key="cJournalsNotebook-event-updated">Taccuino aggiornato</text>
- <text key="cJournalsNotebook-event-deleted">Taccuino eliminato</text>
- <text key="cJournalsNotebook-event-undeleted">Taccuino ripristinato</text>
- <text key="cJournalsNotebook-event-removed">Taccuino rimosso</text>
  <text key="cJournalsNotebook-alert-error">Si è verificato un errore durante il salvataggio del taccuino</text>
  <text key="cJournalsNotebook-alert-exists">Il taccuino non è stato trovato</text>
  <text key="cJournalsNotebook-alert-stored">Il taccuino è stato salvato</text>
@@ -90,6 +76,7 @@
 
  <!-- dashboard -->
  <text key="dashboard-tasks-tr-unvalued">Non sono presenti compiti da mostrare..</text>
+ <text key="dashboard-tasks-td-today">Oggi</text>
  <text key="dashboard-tasks-td-remove-confirm">Confermi di voler rimuovere irrecuperabilmente questo promemoria dal database?</text>
  <text key="dashboard-tasks-td-complete">Archivia</text>
  <text key="dashboard-tasks-td-complete-confirm">Confermi di voler archiviare questo promemoria?</text>
@@ -97,6 +84,7 @@
  <text key="dashboard-tasks-td-uncomplete-confirm">Confermi di voler ripristinare questo promemoria?</text>
  <text key="dashboard-tasks-btn-add">Aggiungi</text>
  <text key="dashboard-tasks-btn-all">Tutti</text>
+ <text key="dashboard-tasks-btn-today">Oggi</text>
  <text key="dashboard-tasks-modal-title-add">Aggiungi promemoria</text>
  <text key="dashboard-tasks-modal-title-edit">Modifica promemoria</text>
  <text key="dashboard-tasks-modal-btn-complete">Archivia</text>

@@ -41,7 +41,7 @@ class cJournalsNotebook extends cObject{
    * @param string[] $additional_parameters Array of url additional parameters
    * @return object Form structure
    */
-  public function form_edit(array $additional_parameters=null){
+  public function form_edit(array $additional_parameters=array()){
    // build form
    $form=new strForm(api_url(array_merge(["mod"=>"journals","scr"=>"submit","act"=>"notebook_store","idNotebook"=>$this->id],$additional_parameters)),"POST",null,null,"journals_notebooks_form");
    // fields

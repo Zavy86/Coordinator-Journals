@@ -17,7 +17,8 @@
   case "tag_undelete":tag("undelete");break;
   case "tag_remove":tag("remove");break;
   // tasks
-  case "task_store":task("store");break;
+	case "task_store":task("store");break;
+	case "task_today":task("today");break;
   case "task_complete":task("complete");break;
   case "task_uncomplete":task("uncomplete");break;
   case "task_remove":task("remove");break;
@@ -97,6 +98,9 @@
      $task_obj->store_tags($_REQUEST['tags']);
      api_alerts_add(api_text("cJournalsTask-alert-stored"),"success");
      break;
+		case "today":
+			$task_obj->today($_REQUEST['value']);
+		 break;
     case "complete":
      $task_obj->complete();
      api_alerts_add(api_text("cJournalsTask-alert-completed"),"success");
@@ -112,11 +116,13 @@
     default:
      throw new Exception("Task action \"".$action."\" was not defined..");
    }
+   // check for today
+   if($action=="today"||$task_obj->today||$_REQUEST["today"]){$act="today";}else{$act="all";}
    // redirect
-   api_redirect(api_return_url(["scr"=>"tasks_list","idTask"=>$task_obj->id]));
+   api_redirect(api_return_url(["scr"=>"dashboard","idTask"=>$task_obj->id,"act"=>$act]));
   }catch(Exception $e){
    // dump, alert and redirect
-   api_redirect_exception($e,api_url(["scr"=>"tasks_list","idTask"=>$task_obj->id]),"cJournalsTask-alert-error");
+   api_redirect_exception($e,api_url(["scr"=>"dashboard","idTask"=>$task_obj->id]),"cJournalsTask-alert-error");
   }
  }
 

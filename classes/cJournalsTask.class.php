@@ -20,6 +20,7 @@
   protected $id;
   protected $deleted;
   protected $completed;
+	protected $today;
   protected $fkUser;
   protected $title;
   protected $content;
@@ -64,6 +65,30 @@
    if(!strlen(trim($this->title))){throw new Exception("Task title is mandatory..");}
    // return
    return true;
+  }
+
+	/**
+	 * Today
+	 *
+	 * @param boolean $value Today or not today
+	 * @param boolean $log Log event
+	 * @return boolean
+	 */
+  public function today($value,$log=false){
+	 // check existence
+	 if(!$this->exists()){return false;}
+	 // build query object
+	 $query_obj=new stdClass();
+	 $query_obj->id=$this->id;
+	 $query_obj->today=$value;
+	 // debug
+	 api_dump($query_obj,static::class."->today query object");
+	 // execute query
+	 $GLOBALS['database']->queryUpdate(static::$table,$query_obj);
+	 // throw event
+	 $this->event("information","today",null,$log);
+	 // return
+	 return true;
   }
 
   /**
@@ -120,7 +145,7 @@
    * @param string[] $additional_parameters Array of url additional parameters
    * @return object Form structure
    */
-  public function form_edit(array $additional_parameters=null){
+  public function form_edit(array $additional_parameters=array()){
    // build form
    $form=new strForm("?mod=journals&scr=submit&act=task_store&idTask=".$this->id."&".http_build_query($additional_parameters),"POST",null,null,"journals_tasks_form_edit");
    // fields
