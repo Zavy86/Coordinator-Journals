@@ -50,21 +50,21 @@
   // get object
   $selected_tag_obj=new cJournalsTag($_REQUEST['idTag']);
   // get form
-  $notebook_form=$selected_tag_obj->form_edit(["return"=>["scr"=>"tags_list"]]);
+  $tag_form=$selected_tag_obj->form_edit(["return"=>["scr"=>"tags_list"]]);
   // replace fkUser form field
-  $notebook_form->removeField("fkUser");
-  $notebook_form->addField("hidden","fkUser",null,$GLOBALS['session']->user->id);
+  $tag_form->removeField("fkUser");
+  $tag_form->addField("hidden","fkUser",null,$GLOBALS['session']->user->id);
   // additional controls
-  $notebook_form->addControl("button",api_text("form-fc-cancel"),"#",null,null,null,"data-dismiss='modal'");
+  $tag_form->addControl("button",api_text("form-fc-cancel"),"#",null,null,null,"data-dismiss='modal'");
   if($selected_tag_obj->id){
    if($selected_tag_obj->deleted){
-    $notebook_form->addControl("button",api_text("form-fc-undelete"),api_url(["scr"=>"submit","act"=>"tag_undelete","idTag"=>$selected_tag_obj->id]),"btn-warning");
-    $notebook_form->addControl("button",api_text("form-fc-remove"),api_url(["scr"=>"submit","act"=>"tag_remove","idTag"=>$selected_tag_obj->id]),"btn-danger",api_text("tags_list-modal-fc-remove-confirm"),null,null,(!$selected_tag_obj->tasks_count()));
-   }else{$notebook_form->addControl("button",api_text("form-fc-delete"),api_url(["scr"=>"submit","act"=>"tag_delete","idTag"=>$selected_tag_obj->id]),"btn-danger",api_text("tags_list-modal-fc-delete-confirm"));}
+    $tag_form->addControl("button",api_text("form-fc-undelete"),api_url(["scr"=>"submit","act"=>"tag_undelete","idTag"=>$selected_tag_obj->id]),"btn-warning");
+    $tag_form->addControl("button",api_text("form-fc-remove"),api_url(["scr"=>"submit","act"=>"tag_remove","idTag"=>$selected_tag_obj->id]),"btn-danger",api_text("tags_list-modal-fc-remove-confirm"),null,null,(!$selected_tag_obj->tasks_count()));
+   }else{$tag_form->addControl("button",api_text("form-fc-delete"),api_url(["scr"=>"submit","act"=>"tag_delete","idTag"=>$selected_tag_obj->id]),"btn-danger",api_text("tags_list-modal-fc-delete-confirm"));}
   }
   // build modal
   $modal=new strModal(api_text("tags_list-modal-title-".($selected_tag_obj->id?"edit":"add"),$selected_tag_obj->name),null,"tags_list-edit");
-  $modal->setBody($notebook_form->render());
+  $modal->setBody($tag_form->render());
   // add modal to application
   $app->addModal($modal);
   // modal scripts

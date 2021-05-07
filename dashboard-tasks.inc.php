@@ -10,10 +10,15 @@
  $tag_obj=new cJournalsTag($_REQUEST['idTag']);
  // check object
  if($tag_obj->id && $tag_obj->fkUser!=$session->user->id){api_alerts_add(api_text("cJournalsTag-alert-unauthorized"),"danger");api_redirect(api_url(["scr"=>"dashboard"]));}
+// check for action
+if(!defined(ACTION)&&!$tag_obj->id){define("ACTION","today");}
  // get tasks
  $tasks_array=array();
  if($tag_obj->id){$tasks_array=$tag_obj->getTasks();}
- else{$tasks_array=cJournalsTask::availables(false,["fkUser"=>$session->user->id]);}
+ else{
+ 	if(ACTION=="today"){$tasks_array=cJournalsTask::availables(false,["fkUser"=>$session->user->id,"today"=>true]);}
+ 	else{$tasks_array=cJournalsTask::availables(false,["fkUser"=>$session->user->id]);}
+ }
  // build table
  $table=new strTable(api_text("dashboard-tasks-tr-unvalued"));
  // cycle all tasks
@@ -21,6 +26,8 @@
   // build operation button
   $ob=new strOperationsButton();
   $ob->addElement(api_url(["scr"=>"dashboard","act"=>"task_view","idTag"=>$tag_obj->id,"idTask"=>$task_fobj->id]),"fa-info-circle",api_text("table-td-view"));
+  if(!$task_fobj->today){$ob->addElement(api_url(["scr"=>"submit","act"=>"task_today","value"=>true,"idTask"=>$task_fobj->id,"return"=>["scr"=>"dashboard","idTag"=>$tag_obj->id]]),"fa-clock-o",api_text("dashboard-tasks-td-today"));}
+ 	else{$ob->addElement(api_url(["scr"=>"submit","act"=>"task_today","value"=>false,"idTask"=>$task_fobj->id,"return"=>["scr"=>"dashboard","idTag"=>$tag_obj->id]]),"fa-clock-o",api_text("dashboard-tasks-td-today"));}
   if(!$task_fobj->completed){
    $ob->addElement(api_url(["scr"=>"submit","act"=>"task_complete","idTask"=>$task_fobj->id,"return"=>["scr"=>"dashboard","idTag"=>$tag_obj->id]]),"fa-check-square-o",api_text("dashboard-tasks-td-complete"),true,api_text("dashboard-tasks-td-complete-confirm"));
    $ob->addElement(api_url(["scr"=>"dashboard","act"=>"task_edit","idTag"=>$tag_obj->id,"idTask"=>$task_fobj->id]),"fa-pencil",api_text("table-td-edit"));
@@ -46,7 +53,8 @@
  // make tasks content
  $tasks_tags_links_array=array();
  $tasks_tags_links_array[]=api_link(api_url(["scr"=>"dashboard","act"=>"task_add","idTag"=>$tag_obj->id]),api_text("dashboard-tasks-btn-add"),null,"btn btn-sm btn-primary");
- $tasks_tags_links_array[]=api_link(api_url(["scr"=>"dashboard"]),api_text("dashboard-tasks-btn-all"),null,"btn btn-sm btn-default".(!$tag_obj->id?" active":null));
+ $tasks_tags_links_array[]=api_link(api_url(["scr"=>"dashboard","act"=>"all"]),api_text("dashboard-tasks-btn-all"),null,"btn btn-sm btn-default".(ACTION=="all"?" active":null));
+ $tasks_tags_links_array[]=api_link(api_url(["scr"=>"dashboard","act"=>"today"]),api_icon("fa-clock-o")." ".api_text("dashboard-tasks-btn-today"),null,"btn btn-sm btn-default".(ACTION=="today"?" active":null));
  // cycle all tags
  foreach(cJournalsTag::availables(false,["fkUser"=>$session->user->id]) as $tag_fobj){
   // make url label and count tasks
@@ -101,6 +109,8 @@
   // replace fkUser form field
   $task_form->removeField("fkUser");
   $task_form->addField("hidden","fkUser",null,$GLOBALS['session']->user->id);
+  $task_form->addField("checkbox","today",null);
+	$task_form->addFieldOption("1",api_text("cJournalsTask-today"));
   // additional controls
   $task_form->addControl("button",api_text("form-fc-cancel"),"#",null,null,null,"data-dismiss='modal'");
   // build modal
