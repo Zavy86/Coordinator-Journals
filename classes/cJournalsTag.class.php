@@ -89,7 +89,7 @@ class cJournalsTag extends cObject{
    $form->addField("textarea","description",api_text("cJournalsTag-ff-description"),$this->description,api_text("cJournalsTag-ff-description-placeholder"),null,null,null,"rows='2'");
    $form->addField("color","color",api_text("cJournalsTag-ff-color"),($this->color?$this->color:api_random_color()),null,2,null,null,"required");
    // controls
-   $form->addControl("submit",api_text("form-fc-submit"));
+   $form->addControl("submit",api_text("form-fc-save"));
    // return
    return $form;
   }

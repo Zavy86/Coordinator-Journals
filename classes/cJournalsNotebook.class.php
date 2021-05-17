@@ -48,7 +48,7 @@ class cJournalsNotebook extends cObject{
    $form->addField("hidden","fkUser",null,$GLOBALS['session']->user->id);
    $form->addField("textarea","content",api_text("cJournalsNotebook-ff-content"),$this->content,api_text("cJournalsNotebook-ff-content-placeholder"),null,null,null,"rows='9'");
    // controls
-   $form->addControl("submit",api_text("form-fc-submit"));
+   $form->addControl("submit",api_text("form-fc-save"));
    // return
    return $form;
   }

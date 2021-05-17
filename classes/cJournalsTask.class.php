@@ -157,7 +157,7 @@
    $form->addField("select","tags[]",api_text("cJournalsTask-ff-tags"),$tags_array,null,null,null,null,"multiple");
    foreach(cJournalsTag::availables(false,["fkUser"=>$GLOBALS['session']->user->id]) as $tag_fobj){$form->addFieldOption($tag_fobj->id,$tag_fobj->name);}
    // controls
-   $form->addControl("submit",api_text("form-fc-submit"));
+   $form->addControl("submit",api_text("form-fc-save"));
    // return
    return $form;
   }
